@@ -87,9 +87,9 @@ public class StudentResource {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	
-	public Student updateStudent(@PathParam("studentId") Integer id) {
+	public Student updateStudent(@PathParam("studentId") String id, Student student) {
 		
-		Student student = studentRepository.update(id);
+		studentRepository.update(student, id);
 		
 		return student;
 	}

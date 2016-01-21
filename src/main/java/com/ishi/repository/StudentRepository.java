@@ -24,4 +24,6 @@ public interface StudentRepository {
 	//Still need to work on........
 	void update(Integer id, Integer age);
 
+	void update(Student student, String id);
+
 }

@@ -15,6 +15,20 @@ public class StudentRepositoryTest {
 	StudentRepository studentRepository = (StudentRepository) context.getBean("studentRepositoryStub");
 	
 	@Test
+	public void testUpdate() {
+		System.out.println("------Records Update--------");
+		Student student = new Student();
+		
+		student.setFirstName("Dilip");
+		student.setLastName("Mirchandani");
+		
+		studentRepository.update(student,"31");
+		System.out.println();
+	}
+	
+	
+	
+	@Test
 	public void testCreate() {
 		System.out.println("------Records Creation--------");
 		Student student = new Student();

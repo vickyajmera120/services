@@ -44,6 +44,35 @@ public class StudentRepositoryStub implements StudentRepository {
 		return;
 	}
 
+	
+	// Register the student and make entry in the database
+	@Override
+	public void update(Student student, String id) {
+//		String SQL = "INSERT INTO `Internship`.`student` (`first_name`, `last_name`,"
+//				+ " `email`, `mobile`, `address`, `city`, `pincode`, `state`, `country`, `courses`)"
+//				+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
+
+		String sql = "UPDATE `Internship`.`student` SET `first_name`='?', `last_name`='?', `email`='?', `mobile`='?',"
+				+"`address`='?', `city`='?', `pincode`='?', `state`='?', `country`='?', `courses`='?' WHERE `id`='?'";
+		
+		String firstName = student.getFirstName();
+		String lastName = student.getLastName();
+		String email = student.getEmail();
+		String mobile = student.getMobile();
+		String address = student.getAddress();
+		String pincode = student.getPincode();
+		String city = student.getCity();
+		String state = student.getState();
+		String country = student.getCountry();
+		String courses = student.getCourses();
+
+		// jdbcTemplateObject.update(SQL, student);
+		jdbcTemplateObject.update(sql, new Object[] { firstName, lastName, email, mobile, address, city, pincode, state, country, courses, id});
+		System.out.println("Updated Record: \tName = " + firstName);
+		return;
+	}
+	
+	
 	// Delete the student account having ID=id
 	@Override
 	public void delete(Integer id) {
