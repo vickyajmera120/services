@@ -28,6 +28,10 @@ var eventsApp = angular.module('eventsApp', ['ngResource','ngRoute'])
                     templateUrl: './scrum.html',
                     controller: 'EventController'
                 })
+                .when('/students', {
+                    templateUrl: './students.html',
+                    controller: 'EventController'
+                })
                 .when('/register', {
                     templateUrl: './Registration.html',
                     controller: 'EventController'

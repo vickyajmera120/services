@@ -1,0 +1,23 @@
+<div class="container">
+    <div style="padding-left:20px; padding-right:20px">
+
+        <h3>Students</h3>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="student in event.students | orderBy : 'firstName'">
+                    <td>{{student.firstName}}</td>
+                    <td>{{student.lastName}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+    </div>
+</div>

@@ -15,6 +15,10 @@ eventsApp.controller('EventController',
             imageUrl: '/img/ishisystems.png'
         };
 
+        $http.get('http://localhost:8080/rest/students')
+            .success(function(data) {
+                $scope.event.students = data;
+        });
 
         $http.get('data/books.json').success(function(data) {
             $scope.event.books = data;
