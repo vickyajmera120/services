@@ -121,23 +121,6 @@ public class StudentRepositoryStub implements StudentRepository {
 		
 		
 		List<Student> students = jdbcTemplateObject.query(SQL, new StudentMapper());
-		
-		
-		
-		
-//		Student s1 = new Student();
-//		Student s2 = new Student();
-//		
-//		s1.setFirstName("Vicky");
-//		s1.setLastName("Ajmera");
-//		
-//		s2.setFirstName("Aaditya");
-//		s2.setLastName("Gogia");
-//		
-//		List<Student> students = new ArrayList<Student>();
-//		
-//		students.add(s1);
-//		students.add(s2);
 
 		return students;
 	}

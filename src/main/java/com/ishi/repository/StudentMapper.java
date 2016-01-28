@@ -21,7 +21,7 @@ public class StudentMapper implements RowMapper<Student> {
 		student.setState(rs.getString("state"));
 		student.setMobile(rs.getString("mobile"));
 		student.setPincode(rs.getString("pincode"));
-		student.setPincode(rs.getString("courses"));
+		student.setCourses(rs.getString("courses"));
 		
 		return student;
 	}

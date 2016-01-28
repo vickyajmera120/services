@@ -1,6 +1,6 @@
 'use strict';
 
-var eventsApp = angular.module('eventsApp', ['ngResource','ngRoute'])
+var eventsApp = angular.module('eventsApp', ['ngResource','ngRoute','ui.bootstrap'])
     .config( ['$routeProvider',
         function($routeProvider) {
             $routeProvider

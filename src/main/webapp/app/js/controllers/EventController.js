@@ -15,7 +15,7 @@ eventsApp.controller('EventController',
             imageUrl: '/img/ishisystems.png'
         };
 
-        $http.get('http://localhost:8080/rest/students')
+        $http.get('/rest/students')
             .success(function(data) {
                 $scope.event.students = data;
         });
@@ -128,6 +128,43 @@ eventsApp.controller('EventController',
         $scope.downVoteSession = function(session) {
             session.upVoteCount--;
         };
+
+
+        $scope.showDetails = function(student) {
+            $('#det' + student.id).removeClass('hidden');
+            $('#showDetailsBtn' + student.id).addClass('hidden');
+            $('#hideDetailsBtn' + student.id).removeClass('hidden');
+        }
+
+        $scope.hideDetails = function(student) {
+            $('#det' + student.id).addClass('hidden');
+            $('#showDetailsBtn' + student.id).removeClass('hidden');
+            $('#hideDetailsBtn' + student.id).addClass('hidden');
+        }
+
+
+
+
+
+        $scope.filteredTodos = [];
+        $scope.currentPage = 1;
+        $scope.numPerPage = 10;
+        $scope.maxSize = 5;
+
+        $scope.makeTodos = function() {
+            $scope.todos = [];
+            for (var i=1;i<=1000;i++) {
+                $scope.todos.push({ text:'todo '+i, done:false});
+            }
+        };
+
+        $scope.makeTodos();
+
+        $scope.$watch('currentPage + numPerPage', function() {
+            var begin = (($scope.currentPage - 1) * $scope.numPerPage);
+            var end = begin + $scope.numPerPage;
+            $scope.filteredTodos = $scope.todos.slice(begin, end);
+        });
 
     }
 );
