@@ -12,6 +12,6 @@
   },
   {
     "date": "2016-01-28",
-    "tasks": ["Students page created"]
+    "tasks": ["Students page created", "Student details button implemented", "Delete student button implemented", "Registration page connected to backend successfully"]
   }
 ]

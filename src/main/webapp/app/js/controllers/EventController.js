@@ -156,13 +156,37 @@ eventsApp.controller('EventController',
 
         $scope.Register = function() {
 
-            var firstName = $("#first_name").value;
-            var lastName = $("#last_name").value;
-            var password1 = $("#password").value;
-            var password2 = $("#password_confirmation").value;
+            var firstName = document.getElementById('first_name').value;
+            var lastName = document.getElementById('last_name').value;
+            var password1 = document.getElementById('password').value;
+            var password2 = document.getElementById('password_confirmation').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var address = document.getElementById('address').value;
+            var city = document.getElementById('city').value;;
+            var pincode = document.getElementById('pincode').value;
+            var state = document.getElementById('state').value;
+            var country = document.getElementById('country').value;
 
+            /*
+            alert(firstName + " " + lastName + " " + password1 + " " + password2 + "\n" +
+                    email + " " + mobile + " " + "\n"+
+                    address + "\n" +
+                    city + " " + pincode + " " + state + " " + country
+            );*/
 
-            alert(firstName + " " + lastName + " " + password1 + " " + password2);
+            var student = {firstName: firstName, lastName: lastName, email: email, mobile: mobile, address: address,
+                city: city, pincode: pincode, state:state, country:country
+            }
+
+            var student_details = JSON.stringify(student);
+
+            alert(student_details);
+
+            $http.post('/rest/register', student_details);
+
+            //alert("Registration successful...");
+
 
         }
 

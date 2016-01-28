@@ -14,5 +14,9 @@
   {
     "name": "project4",
     "details": ["Projects Page", "Daily Scrum Page"]
+  },
+  {
+    "name": "project5",
+    "details": ["Students Page", "Registration Backend connection"]
   }
 ]

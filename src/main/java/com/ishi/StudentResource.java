@@ -68,29 +68,14 @@ public class StudentResource {
 	
 	//Register a student on the site
 	@POST
-	@Path("register_success.html")
-	@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
+	@Path("register")
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	
-	public Student createStudent(MultivaluedMap<String, String> formParams) {
-		
-		System.out.println("registration successful");
-		Student student = new Student();
-		
-		student.setFirstName(formParams.getFirst("first_name"));
-		student.setLastName(formParams.getFirst("last_name"));
-		
-		student.setEmail(formParams.getFirst("email"));
-		student.setMobile(formParams.getFirst("mobile"));
-		student.setAddress(formParams.getFirst("address"));
-		
-		student.setCity(formParams.getFirst("city"));
-		student.setPincode(formParams.getFirst("pincode"));
-		student.setState(formParams.getFirst("state"));
-		student.setCountry(formParams.getFirst("country"));
-		
+	public Student createStudent(Student student) {
+
 		studentRepository.create(student);
-		
+
 		return student;
 	}
 	
