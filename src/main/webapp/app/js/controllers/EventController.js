@@ -142,6 +142,33 @@ eventsApp.controller('EventController',
             $('#hideDetailsBtn' + student.id).addClass('hidden');
         }
 
+        $scope.deleteStudent = function(student) {
+
+            var confirmation = confirm("Are you sure you want to delete record with id=" + student.id);
+
+            if(confirmation) {
+                $http.delete('/rest/delete/' + student.id);
+                console.log("Student with id " + student.id + " deleted!");
+                location.reload();
+            }
+        }
+
+
+        $scope.Register = function() {
+
+            var firstName = $("#first_name").value;
+            var lastName = $("#last_name").value;
+            var password1 = $("#password").value;
+            var password2 = $("#password_confirmation").value;
+
+
+            alert(firstName + " " + lastName + " " + password1 + " " + password2);
+
+        }
+
+
+
+
 
 
 

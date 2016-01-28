@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" id="studentsPage">
     <div style="padding-left:20px; padding-right:20px">
 
         <h3>Students</h3>
@@ -68,7 +68,7 @@
                     </td>
                     <td id="showDetailsBtn{{student.id}}" class="btn btn-info" ng-click="showDetails(student)">Show Details</td>
                     <td id="hideDetailsBtn{{student.id}}" class="btn btn-info hidden" ng-click="hideDetails(student)">Hide Details&nbsp;&nbsp;</td>
-                    <td class="btn btn-danger">Delete Student</td>
+                    <td class="btn btn-danger" ng-click="deleteStudent(student)">Delete Student</td>
 
 
                 </tr>
