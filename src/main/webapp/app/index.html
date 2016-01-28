@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" ng-app="eventsApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>ISHI Internship</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <!--<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+
+    <link rel="stylesheet" href="./css/app.css"/>
+
+    <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="./lib/underscore-1.4.4.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+
+    <!--
+    <script src="./lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/angular/angular-resource.js"></script>
+    <script src="./lib/angular/angular-route.js"></script>
+    -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+
+    <script src="./js/app.js"></script>
+    <script src="./js/controllers/EventController.js"></script>
+    <script src="./js/filters.js"></script>
+    <script src="./js/directives.js"></script>
+    <script src="./js/directives/greetings.js"></script>
+    <script src="./js/directives/collapsible.js"></script>
+    <script src="./js/directives/courses.js"></script>
+    <script src="./js/directives/books.js"></script>
+    <script src="./js/directives/addScrum.js"> </script>
+
+
+    <link rel="shortcut icon" href="./img/ishi.png">
+</head>
+
+    <body>
+
+
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+
+                <ul class="nav">
+                    <a href="#/EventDetails" class="btn"> Home</a>
+                    <a href="#/courses" class="btn"> Courses</a>
+                    <a href="#/ebooks" class="btn"> EBooks</a>
+                    <a href="#/projects" class="btn"> Projects</a>
+                    <a href="#/scrum" class="btn"> Scrum</a>
+                    <a href="#/register" class="btn"> Register</a>
+                    <a href="#/update" class="btn"> Update</a>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div ng-view></div>
+
+    </body>
+</html>
+

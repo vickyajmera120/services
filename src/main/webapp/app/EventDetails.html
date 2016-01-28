@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div style="padding-left:20px; padding-right:20px">
+        <img id="intern_img_low" src="./img/ishisystems_low.png" alt="{{evnt.name}}" class="span11" ng-cloak />
+        <img id="intern_img" src="./img/ishisystems.png" alt="{{event.name}}" class="span11 hidden" />
+
+        <div class="row" ng-cloak>
+            <div class="span11">
+                <h2>{{event.name}}</h2>
+            </div>
+        </div>
+
+        <div class="row" ng-cloak>
+            <div class="span3">
+                <div><strong>Date:</strong> {{ event.date}}</div>
+                <div><strong>Time:</strong> {{ event.time}}</div>
+            </div>
+
+            <div class="span4">
+                <adress>
+                    <strong>Address:</strong><br />
+                    {{event.location.address}}<br />
+                    {{event.location.city}}, {{event.location.province}}
+                </adress>
+            </div>
+        </div>
+
+        <hr />
+
+    </div>
+</div>
+
+
+<script>
+    //To make the loading of the image faster.
+    $('#intern_img').on('load', function() {
+        $('#intern_img').removeClass('hidden');
+        $('#intern_img_low').addClass('hidden');
+    });
+</script>

@@ -1,0 +1,51 @@
+<div class="container">
+    <div style="padding-left:20px; padding-right:20px">
+
+        <h3>Projects</h3>
+        <ul class="thumbnails" ng-cloak>
+            <li ng-repeat="project in event.projects | orderBy : 'name'">
+                <div class="row session">
+
+                    <!--
+                    <div class="span0 well votingWidget">
+                        <div class="votingButton" ng-click="upVoteSession(course)">
+                            <i class="icon-chevron-up icon-white"></i>
+                        </div>
+
+                        <div class="badge badge-inverse">
+                            <div>{{course.upVoteCount }}</div>
+                        </div>
+
+                        <div class="votingButton" ng-click="downVoteSession(course)">
+                            <i class="icon-chevron-down icon-white"></i>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="well span9">
+
+                        <div id="project">
+                            <h3>{{project.name}}</h3>
+                            <div ng-repeat="p_detail in project.details">
+                                <span style="font-size:15px;"> {{p_detail}} </span> <br />
+                            </div>
+                            <br/>
+                            <!-- Still need to modify this-->
+                            <div class="span8">
+                                <input type="text" id="addt" ng-model="newTopic" placeholder="Add topics...">
+                                <button class="btn" style="margin-bottom:9px" ng-click="addTopic(course,newTopic)">Add</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+</div>

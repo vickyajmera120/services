@@ -1,0 +1,20 @@
+<div class="container">
+    <div style="padding-left:20px; padding-right:20px">
+        <h3>E-Books</h3>
+        <ul class="thumbnails" ng-cloak>
+            <li ng-repeat="book in event.books | orderBy:name">
+                <div class="row session">
+                    <div class="well span9">
+
+                        <collapsible title="{{book.name}}" style="cursor:pointer;">
+                            <div ng-repeat="topic in book.contents">
+                                <span> {{topic}} </span> <br />
+                            </div>
+                        </collapsible>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

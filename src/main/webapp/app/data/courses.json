@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Java Fundamentals",
+    "topics" : ["Basics","Inheritance & Composition", "Generics", "Exception", "Collection", "Enumeration", "IO", "Threading"],
+    "upVoteCount": 0
+  },
+  {
+    "name": "Python Fundamentals",
+    "topics" : ["Strings", "Objects", "Collection", "Exception", "Iterables", "Classes", "File Management" ],
+    "upVoteCount": 0
+  },
+  {
+    "name": "SQL Fundamentals",
+    "topics" : ["Basics", "Joins", "Retrieve, Update and Delete Data", "Creating Tables"],
+    "upVoteCount": 0
+  },
+  {
+    "name": "Shell Script Fundamentals",
+    "topics" : ["User inputs", "Conditions", "Loops", "Menus", "Scheduling","Troubleshooting"],
+    "upVoteCount": 0
+  },
+  {
+    "name": "Git Fundamentals",
+    "topics" : ["Local Git Repository", "Working Remotely", "Branch, Merge and Rebase", "Learned from Pluralsight and Tutorials point"],
+    "upVoteCount": 0
+  },
+  {
+    "name": "BootStrap Framework",
+    "topics" : ["Layout", "Responsive Web Design", "NavBar", "ScrollSpy", "Grid Structure", "Buttons", "Forms", "Tables", "Images","Icons"],
+    "upVoteCount": 0
+  },
+  {
+    "name": "AngularJS Fundamentals",
+    "topics" : ["Controllers", "Services", "Routing", "Directives"],
+    "upVoteCount": 0
+  }
+]

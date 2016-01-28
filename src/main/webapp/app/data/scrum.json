@@ -1,0 +1,14 @@
+[
+  {
+    "date": "2016-01-26",
+    "tasks": ["Note: Republic day holiday in india"]
+  },
+  {
+    "date": "2016-01-25",
+    "tasks": ["Registration page added", "Update profile page added"]
+  },
+  {
+    "date": "2016-01-27",
+    "tasks": ["Projects page created", "Scrum page created", "Current date is added if not already in the list", "Add task should be shown only in the date of today or next days", "Image quality loading optimized", "Data content stopped showing before completely loaded"]
+  }
+]

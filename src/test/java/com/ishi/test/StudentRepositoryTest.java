@@ -54,7 +54,7 @@ public class StudentRepositoryTest {
 		
 		System.out.println("----Listing Record with ID =  -----");
 		
-		Student student = studentRepository.getStudent("20");
+		Student student = studentRepository.getStudent("28");
 		System.out.println("ID : " + student.getId());
 		System.out.println("First Name : " + student.getFirstName());
 		System.out.println("Last Name : " + student.getLastName());

@@ -1,0 +1,52 @@
+<div class="container">
+    <div style="padding-left:20px; padding-right:20px">
+
+        <h3>Daily Scrum</h3>
+        <ul class="thumbnails" ng-cloak>
+            <li ng-repeat="scrum in event.scrum | orderBy : '-date'">
+                <div class="row session">
+
+                    <!--
+                    <div class="span0 well votingWidget">
+                        <div class="votingButton" ng-click="upVoteSession(course)">
+                            <i class="icon-chevron-up icon-white"></i>
+                        </div>
+
+                        <div class="badge badge-inverse">
+                            <div>{{course.upVoteCount }}</div>
+                        </div>
+
+                        <div class="votingButton" ng-click="downVoteSession(course)">
+                            <i class="icon-chevron-down icon-white"></i>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="well span9">
+
+                        <div id="scrum">
+                            <h3>{{scrum.date}}</h3>
+                            <div ng-repeat="task in scrum.tasks">
+                                <span style="font-size:15px;"> {{task}} </span> <br />
+                            </div>
+                            <br/>
+
+                            <!-- Still need to modify this-->
+                            <div class="span8" ng-show="checkDate(scrum.date)">
+                                <input type="text" id="addt" ng-model="newTask" placeholder="Add task...">
+                                <button class="btn" style="margin-bottom:9px" ng-click="addTask(scrum,newTask)">Add</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+</div>
