@@ -1,10 +1,15 @@
 package com.ishi.test;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -83,7 +88,7 @@ public class StudentRepositoryTest {
 		obj.put("Company List", company);
  
 		// try-with-resources statement based on post comment below :)
-		try (FileWriter file = new FileWriter("/home/vicky.ajmera/workspace2/file1.txt")) {
+		try (FileWriter file = new FileWriter("./src/main/webapp/app/data/file1.json")) {
 			try {
 				file.write(obj.toJSONString());
 			} catch (IOException e) {
@@ -96,6 +101,72 @@ public class StudentRepositoryTest {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	@Test
+	public void testUpdateJson() {
+		
+	    String path = String.format("%s/%s", System.getProperty("user.dir"), this.getClass().getPackage().getName().replace(".", "/"));
+	    System.out.println(path + "hey");
+		
+		
+		JSONParser parser = new JSONParser();
+
+		try {
+
+			Object obj = parser.parse(new FileReader("./src/main/webapp/app/data/scrum.json"));
+
+			JSONArray a = (JSONArray) obj;
+			
+			Iterator<JSONObject> iterator = a.iterator();
+			while (iterator.hasNext()) {
+				//System.out.println(iterator.next().get("date"));
+				
+				JSONObject i = iterator.next();
+				
+				if(i.get("date").equals("2016-01-29")) {
+					System.out.println(i.get("date"));
+					System.out.println(i.get("tasks"));					
+				
+					Object tasks = i.get("tasks");
+					JSONArray tasks2 = (JSONArray) tasks;
+					tasks2.add("New Tasks");
+					
+					
+					i.remove("tasks");
+					i.put("tasks", tasks2);
+					
+					System.out.println(i.get("tasks"));
+					
+				}
+			}
+			
+			
+			try (FileWriter file = new FileWriter("./src/main/webapp/app/data/file1.json")) {
+				try {
+					file.write(a.toJSONString());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				System.out.println("Successfully Added task to the file...");
+				System.out.println("\nJSON Object: " + obj);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	

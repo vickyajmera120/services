@@ -100,6 +100,8 @@ eventsApp.controller('EventController',
             else {
                 scrum.tasks.push(newTask);
             }
+
+            $http.post('data/scrum2.json',scrum.tasks);
         };
 
         $scope.checkDate = function(date) {
@@ -148,8 +150,8 @@ eventsApp.controller('EventController',
 
             if(confirmation) {
                 $http.delete('/rest/delete/' + student.id);
+                $('#record' + student.id).fadeOut(500);
                 console.log("Student with id " + student.id + " deleted!");
-                location.reload();
             }
         }
 

@@ -15,7 +15,7 @@
             </thead>
 
             <tbody>
-                <tr ng-repeat="student in filteredStudents | orderBy : 'id'">
+                <tr id="record{{student.id}}" ng-repeat="student in filteredStudents | orderBy : 'id'">
 
                     <td>{{student.id}}</td>
 

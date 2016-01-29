@@ -1,0 +1,22 @@
+[
+  {
+    "name": "project1",
+    "details": ["ISHI internship website", "Homepage", "Course Page", "Ebook Page"]
+  },
+  {
+    "name": "project2",
+    "details": ["Backend of the site in Java using jersey", "RESTful API creation and JDBC connection using Spring"]
+  },
+  {
+    "name": "project3",
+    "details": ["Registration Page", "Update Profile Page"]
+  },
+  {
+    "name": "project4",
+    "details": ["Projects Page", "Daily Scrum Page"]
+  },
+  {
+    "name": "project5",
+    "details": ["Students Page", "Registration Backend connection","Pagination effect on students page"]
+  }
+]
