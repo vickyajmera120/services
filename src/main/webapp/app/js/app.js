@@ -30,7 +30,7 @@ var eventsApp = angular.module('eventsApp', ['ngResource','ngRoute','ui.bootstra
                 })
                 .when('/students', {
                     templateUrl: './students.html',
-                    controller: 'EventController'
+                    controller: 'EventController',
                 })
                 .when('/register', {
                     templateUrl: './Registration.html',

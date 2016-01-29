@@ -17,6 +17,6 @@
   },
   {
     "name": "project5",
-    "details": ["Students Page", "Registration Backend connection"]
+    "details": ["Students Page", "Registration Backend connection","Pagination effect on students page"]
   }
 ]

@@ -1,6 +1,8 @@
 
-<div class="container" id="studentsPage">
-    <div style="padding-left:20px; padding-right:20px">
+<button class="btn btn-large" ng-click="showStudents()">Show Students</button>
+
+<div class="container hidden" id="studentsPage">
+    <div>
 
         <h3>Students</h3>
 
@@ -13,7 +15,7 @@
             </thead>
 
             <tbody>
-                <tr ng-repeat="student in event.students | orderBy : 'firstName'">
+                <tr ng-repeat="student in filteredStudents | orderBy : 'id'">
 
                     <td>{{student.id}}</td>
 
@@ -66,9 +68,12 @@
                             </tr>
                         </table>
                     </td>
-                    <td id="showDetailsBtn{{student.id}}" class="btn btn-info" ng-click="showDetails(student)">Show Details</td>
-                    <td id="hideDetailsBtn{{student.id}}" class="btn btn-info hidden" ng-click="hideDetails(student)">Hide Details&nbsp;&nbsp;</td>
-                    <td class="btn btn-danger" ng-click="deleteStudent(student)">Delete Student</td>
+                    <td>
+                        <button id="showDetailsBtn{{student.id}}" class="btn btn-info" ng-click="showDetails(student)">Show Details</button>
+                        <button id="hideDetailsBtn{{student.id}}" class="btn btn-info hidden" ng-click="hideDetails(student)">Hide Details&nbsp;&nbsp;</button>
+                    </td>
+
+                    <td><button class="btn btn-danger" ng-click="deleteStudent(student)">Delete Student</button></td>
 
 
                 </tr>
@@ -79,14 +84,7 @@
 
 
 
-
-
-        <ul>
-            <li ng-repeat="todo in filteredTodos" class="btn">{{todo.text}}</li>
-        </ul>
-
-
-        <pagination id="pagin" ng-model="currentPage" total-items="todos.length" max-size="10" boundary-links="true">
+        <pagination id="pagin" ng-model="currentPage" total-items="studentCount" max-size="{{maxSize}}" boundary-links="true">
 
         </pagination>
 

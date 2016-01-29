@@ -15,9 +15,9 @@ eventsApp.controller('EventController',
             imageUrl: '/img/ishisystems.png'
         };
 
-        $http.get('/rest/students')
-            .success(function(data) {
-                $scope.event.students = data;
+
+        $http.get('/rest/students').success(function(data) {
+            $scope.event.students = data;
         });
 
         $http.get('data/books.json').success(function(data) {
@@ -185,37 +185,49 @@ eventsApp.controller('EventController',
 
             $http.post('/rest/register', student_details);
 
-            //alert("Registration successful...");
-
-
+            console.log("registration successful...");
         }
 
 
 
-
-
-
-
-
-        $scope.filteredTodos = [];
+        $scope.filteredStudents = {};
         $scope.currentPage = 1;
         $scope.numPerPage = 10;
         $scope.maxSize = 5;
+        $scope.studentCount = 50;//$scope.numPerPage * $scope.maxSize;
 
-        $scope.makeTodos = function() {
-            $scope.todos = [];
-            for (var i=1;i<=1000;i++) {
-                $scope.todos.push({ text:'todo '+i, done:false});
+        $scope.sliceObj = function(obj, start, end) {
+            var sliced = {};
+            var i = 0;
+            for (var k in obj) {
+                if (i >= start && i < end) {
+                    sliced[k] = obj[k];
+                }
+                i++;
             }
+            return sliced;
         };
-
-        $scope.makeTodos();
 
         $scope.$watch('currentPage + numPerPage', function() {
             var begin = (($scope.currentPage - 1) * $scope.numPerPage);
             var end = begin + $scope.numPerPage;
-            $scope.filteredTodos = $scope.todos.slice(begin, end);
+
+            $scope.filteredStudents = $scope.sliceObj($scope.event.students, begin, end);
         });
+
+
+        $scope.showStudents = function() {
+            var begin = (($scope.currentPage - 1) * $scope.numPerPage);
+            var end = begin + $scope.numPerPage;
+
+            $scope.filteredStudents = $scope.sliceObj($scope.event.students, begin, end);
+
+            if($scope.event.students) {
+                $scope.studentCount = _.size($scope.event.students);
+            }
+
+            $('#studentsPage').load().fadeIn(500);
+        }
 
     }
 );
