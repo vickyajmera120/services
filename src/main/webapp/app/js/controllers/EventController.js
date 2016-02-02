@@ -183,11 +183,10 @@ eventsApp.controller('EventController',
 
             var student_details = JSON.stringify(student);
 
-            alert(student_details);
-
             $http.post('/rest/register', student_details);
 
-            console.log("registration successful...");
+            alert("registration successful...");
+            
         }
 
 

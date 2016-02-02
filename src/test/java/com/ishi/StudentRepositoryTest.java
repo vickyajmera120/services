@@ -1,4 +1,4 @@
-package com.ishi.test;
+package com.ishi;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
