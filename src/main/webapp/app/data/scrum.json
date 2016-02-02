@@ -17,5 +17,13 @@
   {
     "date": "2016-01-29",
     "tasks": ["Pagination effect created on students page"]
+  },
+  {
+    "date": "2016-02-01",
+    "tasks": ["The of installation","Installed IntelliJ IDE and set it up", "Installed maven latest version", "Agile concepts: story-INVEST criteria, story Acceptance criteria, Definition of DONE"]
+  },
+  {
+    "date": "2016-02-02",
+    "tasks": ["Learned Cucumber", "Learned Selenium", "Implemeted integration test on the site"]
   }
 ]
