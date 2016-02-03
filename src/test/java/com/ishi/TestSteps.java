@@ -27,10 +27,10 @@ public class TestSteps {
 		driver.get("http://localhost:8080/app/#/register");
 	}
 
-	@When("^student fills his/her details$")
-	public void student_fills_his_her_details() throws Throwable {
-		driver.findElement(By.id("first_name")).sendKeys("Vicky");
-		driver.findElement(By.id("last_name")).sendKeys("Ajmera");
+	@When("^student fills \"(.*)\" and \"(.*)\"$")
+	public void student_fills_his_her_details(String firstname, String lastname) throws Throwable {
+		driver.findElement(By.id("first_name")).sendKeys(firstname);
+		driver.findElement(By.id("last_name")).sendKeys(lastname);
 		driver.findElement(By.id("register")).click();
 	}
 
